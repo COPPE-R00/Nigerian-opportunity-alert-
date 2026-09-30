@@ -1,1372 +1,1233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Nigeria Opportunity Alert | Jobs, Scholarships, Grants & Internships</title>
-
-  <meta name="description"
-    content="Discover jobs, NGO opportunities, scholarships, grants, internships and training opportunities for Nigerians. Always verify applications through official sources.">
-
-  <meta name="keywords"
-    content="Nigeria jobs, NGO jobs Nigeria, scholarships Nigeria, grants Nigeria, internships Nigeria, training opportunities, opportunity alert">
-
-  <meta name="robots" content="index, follow">
-
-  <meta property="og:title" content="Nigeria Opportunity Alert">
-  <meta property="og:description"
-    content="Discover jobs, scholarships, grants, internships and training opportunities in Nigeria.">
-  <meta property="og:type" content="website">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7f9;
-      color: #17202a;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* HEADER */
-
-    header {
-      background: #063b2a;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0,0,0,.15);
-    }
-
-    .nav {
-      max-width: 1150px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo {
-      font-size: 20px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: #8be28b;
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-    }
-
-    nav a {
-      font-size: 14px;
-      color: #fff;
-      opacity: .9;
-    }
-
-    nav a:hover {
-      opacity: 1;
-      color: #9bf09b;
-    }
-
-    /* HERO */
-
-    .hero {
-      background:
-        linear-gradient(135deg, #063b2a, #087443);
-      color: white;
-      padding: 70px 20px 65px;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .hero h1 {
-      font-size: clamp(32px, 6vw, 58px);
-      line-height: 1.08;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      color: #a5f3a5;
-    }
-
-    .hero p {
-      max-width: 680px;
-      margin: auto;
-      font-size: 17px;
-      opacity: .95;
-    }
-
-    .search-box {
-      max-width: 700px;
-      margin: 30px auto 0;
-      display: flex;
-      background: white;
-      border-radius: 12px;
-      padding: 7px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
-    }
-
-    .search-box input {
-      flex: 1;
-      border: none;
-      outline: none;
-      padding: 14px;
-      font-size: 16px;
-      min-width: 0;
-    }
-
-    .search-box button {
-      background: #087443;
-      color: white;
-      border: none;
-      padding: 0 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* CONTAINER */
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
-      padding: 45px 20px;
-    }
-
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    .section-title h2 {
-      font-size: 28px;
-    }
-
-    .section-title p {
-      color: #69727d;
-      font-size: 14px;
-    }
-
-    /* CATEGORIES */
-
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      margin-bottom: 45px;
-    }
-
-    .category {
-      background: white;
-      border: 1px solid #e3e7eb;
-      padding: 20px 12px;
-      border-radius: 12px;
-      text-align: center;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .category:hover {
-      transform: translateY(-3px);
-      border-color: #087443;
-      box-shadow: 0 7px 20px rgba(0,0,0,.07);
-    }
-
-    .category-icon {
-      font-size: 27px;
-      display: block;
-      margin-bottom: 7px;
-    }
-
-    .category strong {
-      font-size: 14px;
-    }
-
-    /* AD PLACEHOLDER */
-
-    .ad-box {
-      min-height: 90px;
-      background: #fff;
-      border: 1px dashed #cfd5da;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #89929b;
-      font-size: 12px;
-      margin: 25px 0 40px;
-    }
-
-    /* OPPORTUNITIES */
-
-    .opportunity-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid #e2e6e9;
-      box-shadow: 0 4px 14px rgba(0,0,0,.04);
-      transition: .2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 25px rgba(0,0,0,.09);
-    }
-
-    .card-top {
-      padding: 18px 18px 5px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #e8f7ef;
-      color: #086238;
-      padding: 5px 9px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      font-size: 19px;
-      line-height: 1.35;
-      margin-bottom: 9px;
-    }
-
-    .card p {
-      font-size: 13px;
-      color: #68727c;
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      padding: 12px 18px;
-      color: #59636d;
-      font-size: 12px;
-    }
-
-    .meta span {
-      background: #f1f3f5;
-      padding: 5px 8px;
-      border-radius: 6px;
-    }
-
-    .card-bottom {
-      border-top: 1px solid #edf0f2;
-      padding: 13px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .deadline {
-      font-size: 12px;
-      font-weight: bold;
-      color: #b42318;
-    }
-
-    .details-btn {
-      background: #063b2a;
-      color: white;
-      border: none;
-      padding: 9px 13px;
-      border-radius: 7px;
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    /* HOW IT WORKS */
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .step {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid #e2e6e9;
-    }
-
-    .step-number {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: #063b2a;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      margin-bottom: 13px;
-    }
-
-    .step h3 {
-      margin-bottom: 6px;
-    }
-
-    .step p {
-      color: #68727c;
-      font-size: 14px;
-    }
-
-    /* NOTICE */
-
-    .notice {
-      background: #fff8e6;
-      border: 1px solid #f2d58a;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    .notice strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .notice p {
-      font-size: 13px;
-      color: #65552a;
-    }
-
-    /* NEWSLETTER */
-
-    .alert-section {
-      background: #063b2a;
-      color: white;
-      border-radius: 16px;
-      padding: 40px 25px;
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .alert-section h2 {
-      margin-bottom: 8px;
-    }
-
-    .alert-section p {
-      opacity: .9;
-      max-width: 600px;
-      margin: auto auto 20px;
-      font-size: 14px;
-    }
-
-    .alert-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .alert-buttons a {
-      background: white;
-      color: #063b2a;
-      padding: 11px 18px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #101817;
-      color: white;
-      margin-top: 50px;
-      padding: 40px 20px;
-    }
-
-    .footer-grid {
-      max-width: 1150px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 35px;
-    }
-
-    footer h3 {
-      margin-bottom: 12px;
-    }
-
-    footer p,
-    footer a {
-      color: #b8c1c0;
-      font-size: 13px;
-    }
-
-    footer a {
-      display: block;
-      margin-bottom: 7px;
-    }
-
-    .copyright {
-      max-width: 1150px;
-      margin: 30px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid #303938;
-      color: #899391;
-      font-size: 12px;
-    }
-
-    /* MODAL */
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.65);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      z-index: 2000;
-    }
-
-    .modal-content {
-      background: white;
-      width: 100%;
-      max-width: 600px;
-      border-radius: 15px;
-      padding: 25px;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-
-    .close {
-      border: none;
-      background: #eee;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 20px;
-    }
-
-    .modal-content p {
-      color: #59636d;
-      margin-bottom: 14px;
-    }
-
-    .official-link {
-      display: inline-block;
-      background: #063b2a;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 8px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .empty {
-      display: none;
-      text-align: center;
-      padding: 35px;
-      background: white;
-      border-radius: 12px;
-      color: #68727c;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-      nav {
-        display: none;
-      }
-
-      .categories {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .opportunity-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .hero {
-        padding: 50px 15px;
-      }
-
-      .search-box {
-        flex-direction: column;
-        background: transparent;
-        box-shadow: none;
-        gap: 8px;
-      }
-
-      .search-box input {
-        border-radius: 8px;
-      }
-
-      .search-box button {
-        padding: 13px;
-      }
-
-      .categories {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .section-title {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nigeria Opportunity Alert | Jobs, Scholarships, Grants & Internships</title>
+
+<meta name="description" content="Find verified jobs, scholarships, fellowships, internships, volunteer opportunities and training opportunities for Nigerians.">
+
+<meta name="keywords" content="Nigeria opportunities, NGO jobs Nigeria, scholarships Nigeria, internships Nigeria, grants Nigeria, fellowships Nigeria, volunteer opportunities">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Nigeria Opportunity Alert">
+<meta property="og:description" content="Discover verified opportunities for Nigerians.">
+<meta property="og:type" content="website">
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7f8;
+color:#17202a;
+line-height:1.6;
+}
+
+a{
+text-decoration:none;
+}
+
+header{
+background:#063b2a;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+
+.nav{
+max-width:1150px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:20px;
+font-weight:800;
+color:white;
+}
+
+.logo span{
+color:#9cf09c;
+}
+
+nav{
+display:flex;
+gap:20px;
+}
+
+nav a{
+color:white;
+font-size:14px;
+}
+
+nav a:hover{
+color:#9cf09c;
+}
+
+.hero{
+background:linear-gradient(135deg,#063b2a,#087443);
+color:white;
+text-align:center;
+padding:70px 20px;
+}
+
+.hero-content{
+max-width:850px;
+margin:auto;
+}
+
+.hero h1{
+font-size:clamp(34px,6vw,58px);
+line-height:1.08;
+margin-bottom:18px;
+}
+
+.hero h1 span{
+color:#a5f3a5;
+}
+
+.hero p{
+max-width:680px;
+margin:auto;
+font-size:17px;
+opacity:.95;
+}
+
+.search{
+max-width:700px;
+margin:30px auto 0;
+display:flex;
+background:white;
+padding:7px;
+border-radius:12px;
+}
+
+.search input{
+flex:1;
+border:none;
+outline:none;
+padding:14px;
+font-size:16px;
+}
+
+.search button{
+background:#087443;
+border:none;
+color:white;
+padding:0 23px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.container{
+max-width:1150px;
+margin:auto;
+padding:45px 20px;
+}
+
+.section-title{
+margin-bottom:20px;
+}
+
+.section-title h2{
+font-size:28px;
+}
+
+.section-title p{
+color:#68727c;
+font-size:14px;
+}
+
+.categories{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px;
+margin-bottom:40px;
+}
+
+.category{
+background:white;
+border:1px solid #e0e5e8;
+border-radius:12px;
+padding:20px 10px;
+text-align:center;
+cursor:pointer;
+transition:.2s;
+}
+
+.category:hover{
+transform:translateY(-3px);
+border-color:#087443;
+}
+
+.category-icon{
+font-size:28px;
+display:block;
+margin-bottom:5px;
+}
+
+.ad{
+height:90px;
+border:1px dashed #c8cfd4;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#89939b;
+font-size:12px;
+margin:30px 0 45px;
+border-radius:10px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+border:1px solid #e0e5e8;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 4px 14px rgba(0,0,0,.04);
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 25px rgba(0,0,0,.09);
+}
+
+.card-body{
+padding:20px;
+}
+
+.badge{
+display:inline-block;
+background:#e7f6ee;
+color:#086238;
+font-size:11px;
+font-weight:bold;
+padding:5px 9px;
+border-radius:20px;
+margin-bottom:12px;
+}
+
+.card h3{
+font-size:19px;
+line-height:1.35;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:13px;
+color:#68727c;
+}
+
+.info{
+display:flex;
+flex-wrap:wrap;
+gap:7px;
+margin-top:15px;
+}
+
+.info span{
+background:#f1f3f5;
+padding:5px 8px;
+border-radius:6px;
+font-size:11px;
+color:#59636d;
+}
+
+.deadline{
+margin-top:15px;
+font-weight:bold;
+font-size:13px;
+color:#b42318;
+}
+
+.card-footer{
+border-top:1px solid #edf0f2;
+padding:13px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.source{
+font-size:11px;
+color:#68727c;
+}
+
+.apply{
+background:#063b2a;
+color:white;
+padding:10px 14px;
+border-radius:7px;
+font-size:12px;
+font-weight:bold;
+}
+
+.apply:hover{
+background:#087443;
+}
+
+.verified{
+font-size:11px;
+color:#087443;
+font-weight:bold;
+margin-top:8px;
+}
+
+.notice{
+background:#fff8e6;
+border:1px solid #efd58a;
+padding:20px;
+border-radius:12px;
+margin-top:40px;
+}
+
+.notice strong{
+display:block;
+margin-bottom:5px;
+}
+
+.notice p{
+font-size:13px;
+color:#66572b;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:20px;
+}
+
+.step{
+background:white;
+padding:25px;
+border-radius:12px;
+border:1px solid #e0e5e8;
+}
+
+.number{
+width:38px;
+height:38px;
+background:#063b2a;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.step h3{
+margin-bottom:5px;
+}
+
+.step p{
+font-size:14px;
+color:#68727c;
+}
+
+.alert{
+background:#063b2a;
+color:white;
+padding:40px 25px;
+border-radius:16px;
+text-align:center;
+margin-top:50px;
+}
+
+.alert p{
+max-width:650px;
+margin:8px auto 20px;
+font-size:14px;
+opacity:.9;
+}
+
+.alert a{
+display:inline-block;
+background:white;
+color:#063b2a;
+padding:11px 18px;
+border-radius:8px;
+font-weight:bold;
+font-size:13px;
+}
+
+footer{
+background:#101817;
+color:white;
+margin-top:50px;
+padding:40px 20px;
+}
+
+.footer-grid{
+max-width:1150px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:30px;
+}
+
+footer h3{
+margin-bottom:12px;
+}
+
+footer p,
+footer a{
+color:#b9c2c0;
+font-size:13px;
+}
+
+footer a{
+display:block;
+margin-bottom:7px;
+}
+
+.copy{
+max-width:1150px;
+margin:30px auto 0;
+padding-top:20px;
+border-top:1px solid #303938;
+font-size:12px;
+color:#899391;
+}
+
+.no-results{
+display:none;
+background:white;
+padding:35px;
+text-align:center;
+border-radius:12px;
+color:#68727c;
+}
+
+@media(max-width:850px){
+
+nav{
+display:none;
+}
+
+.categories{
+grid-template-columns:repeat(2,1fr);
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.steps{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:500px){
+
+.hero{
+padding:50px 15px;
+}
+
+.search{
+flex-direction:column;
+gap:8px;
+background:transparent;
+}
+
+.search input{
+border-radius:8px;
+}
+
+.search button{
+padding:13px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
 
-    <a href="#" class="logo">
-      🇳🇬 Nigeria <span>Opportunity Alert</span>
-    </a>
+<div class="nav">
 
-    <nav>
-      <a href="#opportunities">Opportunities</a>
-      <a href="#categories">Categories</a>
-      <a href="#how">How It Works</a>
-      <a href="#about">About</a>
-    </nav>
+<a href="#" class="logo">
+🇳🇬 Nigeria <span>Opportunity Alert</span>
+</a>
 
-  </div>
+<nav>
+<a href="#opportunities">Opportunities</a>
+<a href="#categories">Categories</a>
+<a href="#how">How It Works</a>
+<a href="#about">About</a>
+</nav>
+
+</div>
+
 </header>
 
 
 <section class="hero">
 
-  <div class="hero-content">
+<div class="hero-content">
 
-    <h1>
-      Find opportunities.<br>
-      <span>Move forward.</span>
-    </h1>
+<h1>
+Find opportunities.<br>
+<span>Move forward.</span>
+</h1>
 
-    <p>
-      Discover jobs, NGO opportunities, scholarships, grants,
-      internships and training opportunities available to Nigerians.
-    </p>
+<p>
+Discover verified jobs, scholarships, fellowships,
+internships and volunteer opportunities.
+</p>
 
-    <div class="search-box">
+<div class="search">
 
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search jobs, scholarships, grants..."
-        onkeyup="searchOpportunities()"
-      >
+<input
+id="searchInput"
+type="text"
+placeholder="Search opportunities..."
+onkeyup="searchOpportunities()"
+>
 
-      <button onclick="searchOpportunities()">
-        Search
-      </button>
+<button onclick="searchOpportunities()">
+Search
+</button>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 
 <main class="container">
 
-  <!-- CATEGORIES -->
 
-  <div id="categories">
+<section id="categories">
 
-    <div class="section-title">
-      <div>
-        <h2>Browse Categories</h2>
-        <p>Explore opportunities by type.</p>
-      </div>
-    </div>
+<div class="section-title">
 
-    <div class="categories">
+<h2>Browse Categories</h2>
 
-      <div class="category" onclick="filterCategory('NGO Jobs')">
-        <span class="category-icon">🤝</span>
-        <strong>NGO Jobs</strong>
-      </div>
+<p>
+Explore opportunities by category.
+</p>
 
-      <div class="category" onclick="filterCategory('Scholarships')">
-        <span class="category-icon">🎓</span>
-        <strong>Scholarships</strong>
-      </div>
+</div>
 
-      <div class="category" onclick="filterCategory('Grants')">
-        <span class="category-icon">💰</span>
-        <strong>Grants</strong>
-      </div>
 
-      <div class="category" onclick="filterCategory('Internships')">
-        <span class="category-icon">💼</span>
-        <strong>Internships</strong>
-      </div>
+<div class="categories">
 
-      <div class="category" onclick="filterCategory('Training')">
-        <span class="category-icon">📚</span>
-        <strong>Training</strong>
-      </div>
+<div class="category" onclick="filterCategory('Job')">
+<span class="category-icon">💼</span>
+<strong>Jobs</strong>
+</div>
 
-    </div>
+<div class="category" onclick="filterCategory('Scholarship')">
+<span class="category-icon">🎓</span>
+<strong>Scholarships</strong>
+</div>
 
-  </div>
+<div class="category" onclick="filterCategory('Fellowship')">
+<span class="category-icon">🌍</span>
+<strong>Fellowships</strong>
+</div>
 
+<div class="category" onclick="filterCategory('Internship')">
+<span class="category-icon">📋</span>
+<strong>Internships</strong>
+</div>
 
-  <!-- AD SPACE -->
+<div class="category" onclick="filterCategory('Volunteer')">
+<span class="category-icon">🤝</span>
+<strong>Volunteering</strong>
+</div>
 
-  <div class="ad-box">
-    Advertisement
-  </div>
+</div>
 
+</section>
 
-  <!-- OPPORTUNITIES -->
 
-  <section id="opportunities">
+<div class="ad">
+Advertisement
+</div>
 
-    <div class="section-title">
 
-      <div>
-        <h2>Latest Opportunities</h2>
-        <p>Check eligibility and application information carefully.</p>
-      </div>
+<section id="opportunities">
 
-    </div>
+<div class="section-title">
 
+<h2>Verified Opportunities</h2>
 
-    <div class="opportunity-grid" id="opportunityGrid">
+<p>
+Information checked against official organization sources.
+</p>
 
+</div>
 
-      <!-- CARD 1 -->
 
-      <article
-        class="card opportunity"
-        data-category="NGO Jobs"
-        data-title="NGO Jobs and Career Opportunities"
-      >
+<div class="grid" id="opportunityGrid">
 
-        <div class="card-top">
 
-          <span class="badge">
-            NGO JOBS
-          </span>
+<!-- AFRICAN DEVELOPMENT BANK -->
 
-          <h3>
-            NGO Jobs & Career Opportunities
-          </h3>
+<article
+class="card opportunity"
+data-category="Internship"
+data-title="African Development Bank 2027 Internship Program Session 1"
+>
 
-          <p>
-            Discover current NGO employment opportunities
-            and learn how to verify the official vacancy.
-          </p>
+<div class="card-body">
 
-        </div>
+<span class="badge">
+INTERNSHIP
+</span>
 
-        <div class="meta">
+<h3>
+African Development Bank 2027 Internship Program – Session 1
+</h3>
 
-          <span>🇳🇬 Nigeria</span>
-          <span>💼 Jobs</span>
+<p>
+The African Development Bank's 2027 Session 1 Internship
+provides eligible students and recent graduates with
+professional and practical experience.
+</p>
 
-        </div>
+<div class="info">
 
-        <div class="card-bottom">
+<span>🌍 Africa</span>
+<span>🎓 Master's level</span>
+<span>💻 Remote/On-site</span>
 
-          <span class="deadline">
-            Check deadline
-          </span>
+</div>
 
-          <button
-            class="details-btn"
-            onclick="openModal(
-              'NGO Jobs & Career Opportunities',
-              'Explore NGO employment opportunities and carefully check each vacancy for eligibility, location, application requirements and deadline. Always apply through the organization’s official website or verified recruitment platform.',
-              'NGO Jobs'
-            )"
-          >
-            View Details
-          </button>
+<div class="deadline">
+⏰ Deadline: 12 October 2026
+</div>
 
-        </div>
+<div class="verified">
+✓ Verified from AfDB official vacancy
+</div>
 
-      </article>
+</div>
 
+<div class="card-footer">
 
-      <!-- CARD 2 -->
+<span class="source">
+Source: African Development Bank
+</span>
 
-      <article
-        class="card opportunity"
-        data-category="Scholarships"
-        data-title="Scholarships for Nigerian Students"
-      >
+<a
+class="apply"
+href="https://www.afdb.org/en/vacancy/2027-internship-program-session-1-97099"
+target="_blank"
+rel="noopener noreferrer"
+>
+Official Application
+</a>
 
-        <div class="card-top">
+</div>
 
-          <span class="badge">
-            SCHOLARSHIP
-          </span>
+</article>
 
-          <h3>
-            Scholarships for Nigerian Students
-          </h3>
 
-          <p>
-            Find scholarship opportunities and review
-            academic and eligibility requirements.
-          </p>
+<!-- MANDELA WASHINGTON -->
 
-        </div>
+<article
+class="card opportunity"
+data-category="Fellowship"
+data-title="Mandela Washington Fellowship 2027"
+>
 
-        <div class="meta">
+<div class="card-body">
 
-          <span>🇳🇬 Nigeria</span>
-          <span>🎓 Education</span>
+<span class="badge">
+FELLOWSHIP
+</span>
 
-        </div>
+<h3>
+Mandela Washington Fellowship 2027
+</h3>
 
-        <div class="card-bottom">
+<p>
+The Mandela Washington Fellowship is a flagship program
+of the U.S. Department of State for young African leaders.
+The 2027 program is scheduled for summer 2027.
+</p>
 
-          <span class="deadline">
-            Check deadline
-          </span>
+<div class="info">
 
-          <button
-            class="details-btn"
-            onclick="openModal(
-              'Scholarships for Nigerian Students',
-              'Scholarship opportunities may have different academic, age, location and financial requirements. Confirm all requirements and deadlines from the official scholarship provider before applying.',
-              'Scholarships'
-            )"
-          >
-            View Details
-          </button>
+<span>🌍 Africa</span>
+<span>🇺🇸 United States</span>
+<span>👥 Young leaders</span>
 
-        </div>
+</div>
 
-      </article>
+<div class="deadline">
+⏰ Deadline: 13 October 2026
+</div>
 
+<div class="verified">
+✓ Verified from official Fellowship website
+</div>
 
-      <!-- CARD 3 -->
+</div>
 
-      <article
-        class="card opportunity"
-        data-category="Grants"
-        data-title="Business and Youth Grants"
-      >
+<div class="card-footer">
 
-        <div class="card-top">
+<span class="source">
+Source: MWF
+</span>
 
-          <span class="badge">
-            GRANTS
-          </span>
+<a
+class="apply"
+href="https://www.mandelawashingtonfellowship.org/preparing-strong-application/"
+target="_blank"
+rel="noopener noreferrer"
+>
+Official Application
+</a>
 
-          <h3>
-            Business & Youth Grant Opportunities
-          </h3>
+</div>
 
-          <p>
-            Discover legitimate grant opportunities for
-            entrepreneurs, young people and organizations.
-          </p>
+</article>
 
-        </div>
 
-        <div class="meta">
+<!-- UNV -->
 
-          <span>🇳🇬 Nigeria</span>
-          <span>💰 Grants</span>
+<article
+class="card opportunity"
+data-category="Volunteer"
+data-title="Child Health Advocacy Initiative Online Volunteer"
+>
 
-        </div>
+<div class="card-body">
 
-        <div class="card-bottom">
+<span class="badge">
+VOLUNTEER
+</span>
 
-          <span class="deadline">
-            Check deadline
-          </span>
+<h3>
+Child Health Advocacy Initiative – Online Volunteer
+</h3>
 
-          <button
-            class="details-btn"
-            onclick="openModal(
-              'Business & Youth Grant Opportunities',
-              'Grant programs can have specific eligibility conditions, application windows and documentation requirements. Never pay an unofficial person to secure a grant for you.',
-              'Grants'
-            )"
-          >
-            View Details
-          </button>
+<p>
+An online volunteer assignment involving digital
+communication, AI and social media support for the
+Child Health Advocacy Initiative in Nigeria.
+</p>
 
-        </div>
+<div class="info">
 
-      </article>
+<span>🇳🇬 Nigeria</span>
+<span>💻 Online</span>
+<span>📱 Digital Media</span>
 
+</div>
 
-      <!-- CARD 4 -->
+<div class="deadline">
+⏰ Deadline: 7 October 2026
+</div>
 
-      <article
-        class="card opportunity"
-        data-category="Internships"
-        data-title="Internship Opportunities in Nigeria"
-      >
+<div class="verified">
+✓ Listed on official UN Volunteers platform
+</div>
 
-        <div class="card-top">
+</div>
 
-          <span class="badge">
-            INTERNSHIPS
-          </span>
+<div class="card-footer">
 
-          <h3>
-            Internship Opportunities in Nigeria
-          </h3>
+<span class="source">
+Source: UN Volunteers
+</span>
 
-          <p>
-            Find internships that can provide students
-            and graduates with practical experience.
-          </p>
+<a
+class="apply"
+href="https://app.unv.org/?name=volunteer"
+target="_blank"
+rel="noopener noreferrer"
+>
+Official Application
+</a>
 
-        </div>
+</div>
 
-        <div class="meta">
+</article>
 
-          <span>🇳🇬 Nigeria</span>
-          <span>💼 Internship</span>
 
-        </div>
+<!-- UNV MACHINE LEARNING -->
 
-        <div class="card-bottom">
+<article
+class="card opportunity"
+data-category="Volunteer"
+data-title="UNDP Online Machine Learning Training Support Volunteer"
+>
 
-          <span class="deadline">
-            Check deadline
-          </span>
+<div class="card-body">
 
-          <button
-            class="details-btn"
-            onclick="openModal(
-              'Internship Opportunities in Nigeria',
-              'Internship requirements vary by organization. Review the official description carefully before submitting your application or personal information.',
-              'Internships'
-            )"
-          >
-            View Details
-          </button>
+<span class="badge">
+VOLUNTEER
+</span>
 
-        </div>
+<h3>
+UNDP Online Machine Learning Training Support
+</h3>
 
-      </article>
+<p>
+An online volunteer assignment listed on the United Nations
+Volunteers platform involving machine learning training
+support.
+</p>
 
+<div class="info">
 
-      <!-- CARD 5 -->
+<span>💻 Online</span>
+<span>🤖 Technology</span>
+<span>📚 Training Support</span>
 
-      <article
-        class="card opportunity"
-        data-category="Training"
-        data-title="Free Training Opportunities"
-      >
+</div>
 
-        <div class="card-top">
+<div class="deadline">
+⏰ Deadline: 8 October 2026
+</div>
 
-          <span class="badge">
-            TRAINING
-          </span>
+<div class="verified">
+✓ Listed on official UN Volunteers platform
+</div>
 
-          <h3>
-            Free Training & Skills Programs
-          </h3>
+</div>
 
-          <p>
-            Discover skills-development and training programs
-            that may help improve your employability.
-          </p>
+<div class="card-footer">
 
-        </div>
+<span class="source">
+Source: UN Volunteers
+</span>
 
-        <div class="meta">
+<a
+class="apply"
+href="https://app.unv.org/?name=volunteer"
+target="_blank"
+rel="noopener noreferrer"
+>
+Official Application
+</a>
 
-          <span>🇳🇬 Nigeria</span>
-          <span>📚 Training</span>
+</div>
 
-        </div>
+</article>
 
-        <div class="card-bottom">
 
-          <span class="deadline">
-            Check deadline
-          </span>
+<!-- UNICEF OFFICIAL JOB PORTAL -->
 
-          <button
-            class="details-btn"
-            onclick="openModal(
-              'Free Training & Skills Programs',
-              'Training opportunities can include technology, entrepreneurship, vocational and professional development programs. Confirm whether the program is genuinely free and verify its official provider.',
-              'Training'
-            )"
-          >
-            View Details
-          </button>
+<article
+class="card opportunity"
+data-category="Job"
+data-title="UNICEF Nigeria Career Opportunities"
+>
 
-        </div>
+<div class="card-body">
 
-      </article>
+<span class="badge">
+NGO / UN JOBS
+</span>
 
+<h3>
+UNICEF Nigeria Career Opportunities
+</h3>
 
-      <!-- CARD 6 -->
+<p>
+Check the official UNICEF careers system for current
+Nigeria vacancies. Availability changes as positions
+open and close.
+</p>
 
-      <article
-        class="card opportunity"
-        data-category="NGO Jobs"
-        data-title="Humanitarian and Development Opportunities"
-      >
+<div class="info">
 
-        <div class="card-top">
+<span>🇳🇬 Nigeria</span>
+<span>🏢 UNICEF</span>
+<span>💼 Careers</span>
 
-          <span class="badge">
-            DEVELOPMENT
-          </span>
+</div>
 
-          <h3>
-            Humanitarian & Development Opportunities
-          </h3>
+<div class="deadline">
+⏰ Check current official listings
+</div>
 
-          <p>
-            Explore career and volunteer opportunities
-            within humanitarian and development work.
-          </p>
+<div class="verified">
+✓ Official UNICEF careers source
+</div>
 
-        </div>
+</div>
 
-        <div class="meta">
+<div class="card-footer">
 
-          <span>🇳🇬 Nigeria</span>
-          <span>🤝 Development</span>
+<span class="source">
+Source: UNICEF
+</span>
 
-        </div>
+<a
+class="apply"
+href="https://jobs.unicef.org/en-us/Search/?location=nigeria&subscribe=true"
+target="_blank"
+rel="noopener noreferrer"
+>
+View Official Jobs
+</a>
 
-        <div class="card-bottom">
+</div>
 
-          <span class="deadline">
-            Check deadline
-          </span>
+</article>
 
-          <button
-            class="details-btn"
-            onclick="openModal(
-              'Humanitarian & Development Opportunities',
-              'Humanitarian organizations may publish jobs, internships and volunteer opportunities through their official websites and verified recruitment platforms. Confirm the source before applying.',
-              'NGO Jobs'
-            )"
-          >
-            View Details
-          </button>
 
-        </div>
+<!-- UN CAREERS -->
 
-      </article>
+<article
+class="card opportunity"
+data-category="Job"
+data-title="United Nations Careers Portal"
+>
 
+<div class="card-body">
 
-    </div>
+<span class="badge">
+UN JOBS
+</span>
 
+<h3>
+United Nations Careers – Current Opportunities
+</h3>
 
-    <div class="empty" id="emptyMessage">
-      No matching opportunities found.
-    </div>
+<p>
+Search the official United Nations careers portal for
+staff positions, temporary positions, internships and
+other opportunities.
+</p>
 
-  </section>
+<div class="info">
 
+<span>🌍 International</span>
+<span>🏢 United Nations</span>
+<span>💼 Careers</span>
 
-  <!-- AD SPACE -->
+</div>
 
-  <div class="ad-box">
-    Advertisement
-  </div>
+<div class="deadline">
+⏰ Deadlines vary
+</div>
 
+<div class="verified">
+✓ Official United Nations careers source
+</div>
 
-  <!-- HOW IT WORKS -->
+</div>
 
-  <section id="how">
+<div class="card-footer">
 
-    <div class="section-title">
+<span class="source">
+Source: United Nations
+</span>
 
-      <div>
-        <h2>How It Works</h2>
-        <p>Simple steps to find opportunities safely.</p>
-      </div>
+<a
+class="apply"
+href="https://careers.un.org/"
+target="_blank"
+rel="noopener noreferrer"
+>
+Official Careers Portal
+</a>
 
-    </div>
+</div>
 
+</article>
 
-    <div class="steps">
 
-      <div class="step">
+</div>
 
-        <div class="step-number">1</div>
 
-        <h3>Discover</h3>
+<div
+class="no-results"
+id="noResults"
+>
+No matching opportunity found.
+</div>
 
-        <p>
-          Browse opportunities by category or search
-          for a specific opportunity.
-        </p>
+</section>
 
-      </div>
 
+<div class="ad">
+Advertisement
+</div>
 
-      <div class="step">
 
-        <div class="step-number">2</div>
+<section id="how">
 
-        <h3>Check Eligibility</h3>
+<div class="section-title">
 
-        <p>
-          Read the requirements, location, documents
-          and deadline before applying.
-        </p>
+<h2>How It Works</h2>
 
-      </div>
+<p>
+Find opportunities and apply safely.
+</p>
 
+</div>
 
-      <div class="step">
 
-        <div class="step-number">3</div>
+<div class="steps">
 
-        <h3>Apply Safely</h3>
+<div class="step">
 
-        <p>
-          Whenever possible, apply directly through
-          the official organization or verified source.
-        </p>
+<div class="number">1</div>
 
-      </div>
+<h3>Discover</h3>
 
-    </div>
+<p>
+Search our opportunity categories and find an opportunity
+that matches your interests.
+</p>
 
-  </section>
+</div>
 
 
-  <!-- SAFETY -->
+<div class="step">
 
-  <div class="notice">
+<div class="number">2</div>
 
-    <strong>⚠️ Stay Safe From Opportunity Scams</strong>
+<h3>Check Requirements</h3>
 
-    <p>
-      Nigeria Opportunity Alert is an information platform,
-      not a government agency, NGO, recruitment company or
-      scholarship provider. We do not guarantee selection.
-      Never send money or sensitive information simply because
-      someone promises a job, grant or scholarship. Verify
-      opportunities through their official source before applying.
-    </p>
+<p>
+Read the eligibility requirements, deadline and other
+conditions on the official source.
+</p>
 
-  </div>
+</div>
 
 
-  <!-- ALERT -->
+<div class="step">
 
-  <section class="alert-section">
+<div class="number">3</div>
 
-    <h2>Never Miss a New Opportunity</h2>
+<h3>Apply Officially</h3>
 
-    <p>
-      Check back regularly for new opportunities across
-      jobs, scholarships, grants, internships and training.
-    </p>
+<p>
+Use the official application button whenever available.
+Avoid unofficial agents and suspicious payment requests.
+</p>
 
-    <div class="alert-buttons">
+</div>
 
-      <a href="#opportunities">
-        View Opportunities
-      </a>
+</div>
 
-      <a href="#categories">
-        Browse Categories
-      </a>
+</section>
 
-    </div>
 
-  </section>
+<div class="notice">
+
+<strong>
+⚠️ Important Safety Notice
+</strong>
+
+<p>
+Nigeria Opportunity Alert is an independent information
+platform. We are not a government agency, NGO, recruitment
+agency, scholarship provider or representative of the
+organizations listed here. Always verify information on
+the official organization website before applying.
+Never pay an unofficial person for a job, scholarship,
+fellowship or grant.
+</p>
+
+</div>
+
+
+<section class="alert">
+
+<h2>
+More Opportunities Coming
+</h2>
+
+<p>
+We are building a regularly updated opportunity board
+covering jobs, scholarships, grants, fellowships,
+internships, volunteering and training.
+</p>
+
+<a href="#opportunities">
+Browse Opportunities
+</a>
+
+</section>
 
 
 </main>
 
 
-<!-- MODAL -->
+<footer id="about">
 
-<div class="modal" id="detailsModal">
+<div class="footer-grid">
 
-  <div class="modal-content">
+<div>
 
-    <div class="modal-header">
+<h3>
+🇳🇬 Nigeria Opportunity Alert
+</h3>
 
-      <div>
-        <span class="badge" id="modalCategory">
-          OPPORTUNITY
-        </span>
-
-        <h2 id="modalTitle">
-          Opportunity
-        </h2>
-      </div>
-
-      <button
-        class="close"
-        onclick="closeModal()"
-      >
-        ×
-      </button>
-
-    </div>
-
-    <p id="modalDescription"></p>
-
-    <p>
-      <strong>Important:</strong>
-      Before applying, verify the opportunity through
-      the official organization or official application
-      source. Do not pay unofficial individuals for
-      recruitment or selection.
-    </p>
-
-    <a
-      href="#"
-      class="official-link"
-      onclick="alert('Official application links will be added when each opportunity is verified.'); return false;"
-    >
-      Official Source
-    </a>
-
-  </div>
+<p>
+Helping Nigerians discover legitimate opportunities
+from official and verifiable sources.
+</p>
 
 </div>
 
 
-<!-- FOOTER -->
+<div>
 
-<footer id="about">
+<h3>
+Explore
+</h3>
 
-  <div class="footer-grid">
+<a href="#opportunities">Opportunities</a>
+<a href="#categories">Categories</a>
+<a href="#how">How It Works</a>
 
-    <div>
-
-      <h3>🇳🇬 Nigeria Opportunity Alert</h3>
-
-      <p>
-        An information platform designed to help Nigerians
-        discover jobs, scholarships, grants, internships,
-        training and other legitimate opportunities.
-      </p>
-
-    </div>
+</div>
 
 
-    <div>
+<div>
 
-      <h3>Explore</h3>
+<h3>
+Important
+</h3>
 
-      <a href="#opportunities">Opportunities</a>
-      <a href="#categories">Categories</a>
-      <a href="#how">How It Works</a>
+<a href="#about">About</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Use</a>
 
-    </div>
+</div>
 
-
-    <div>
-
-      <h3>Important</h3>
-
-      <a href="#about">About Us</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Use</a>
-
-    </div>
-
-  </div>
+</div>
 
 
-  <div class="copyright">
+<div class="copy">
 
-    © 2026 Nigeria Opportunity Alert.
-    Information only — always verify opportunities through official sources.
+© 2026 Nigeria Opportunity Alert.
+Information provided for guidance. Verify opportunities
+through official sources.
 
-  </div>
+</div>
 
 </footer>
 
 
 <script>
 
-  function searchOpportunities() {
+function searchOpportunities(){
 
-    const input =
-      document.getElementById("searchInput")
-      .value
-      .toLowerCase()
-      .trim();
+const input =
+document.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
 
-    const cards =
-      document.querySelectorAll(".opportunity");
+const cards =
+document.querySelectorAll(".opportunity");
 
-    let visible = 0;
+let visible=0;
 
-    cards.forEach(card => {
+cards.forEach(card=>{
 
-      const title =
-        card.dataset.title.toLowerCase();
+const title =
+card.dataset.title.toLowerCase();
 
-      const category =
-        card.dataset.category.toLowerCase();
+const category =
+card.dataset.category.toLowerCase();
 
-      const text =
-        card.innerText.toLowerCase();
+const content =
+card.innerText.toLowerCase();
 
-      const match =
-        title.includes(input) ||
-        category.includes(input) ||
-        text.includes(input);
+if(
+title.includes(input) ||
+category.includes(input) ||
+content.includes(input)
+){
 
-      if (match) {
+card.style.display="";
+visible++;
 
-        card.style.display = "";
+}else{
 
-        visible++;
+card.style.display="none";
 
-      } else {
+}
 
-        card.style.display = "none";
+});
 
-      }
+document.getElementById("noResults")
+.style.display =
+visible===0 ? "block" : "none";
 
-    });
-
-    document.getElementById("emptyMessage")
-      .style.display =
-      visible === 0 ? "block" : "none";
-
-  }
+}
 
 
-  function filterCategory(category) {
+function filterCategory(category){
 
-    const cards =
-      document.querySelectorAll(".opportunity");
+const cards =
+document.querySelectorAll(".opportunity");
 
-    let visible = 0;
+let visible=0;
 
-    cards.forEach(card => {
+cards.forEach(card=>{
 
-      if (card.dataset.category === category) {
+if(card.dataset.category===category){
 
-        card.style.display = "";
+card.style.display="";
+visible++;
 
-        visible++;
+}else{
 
-      } else {
+card.style.display="none";
 
-        card.style.display = "none";
+}
 
-      }
+});
 
-    });
+document.getElementById("noResults")
+.style.display =
+visible===0 ? "block" : "none";
 
-    document.getElementById("emptyMessage")
-      .style.display =
-      visible === 0 ? "block" : "none";
+document
+.getElementById("opportunities")
+.scrollIntoView({
+behavior:"smooth"
+});
 
-    document
-      .getElementById("opportunities")
-      .scrollIntoView({
-        behavior: "smooth"
-      });
-
-  }
-
-
-  function openModal(title, description, category) {
-
-    document.getElementById("modalTitle")
-      .innerText = title;
-
-    document.getElementById("modalDescription")
-      .innerText = description;
-
-    document.getElementById("modalCategory")
-      .innerText = category;
-
-    document.getElementById("detailsModal")
-      .style.display = "flex";
-
-  }
-
-
-  function closeModal() {
-
-    document.getElementById("detailsModal")
-      .style.display = "none";
-
-  }
-
-
-  window.onclick = function(event) {
-
-    const modal =
-      document.getElementById("detailsModal");
-
-    if (event.target === modal) {
-
-      closeModal();
-
-    }
-
-  };
+}
 
 
 </script>
