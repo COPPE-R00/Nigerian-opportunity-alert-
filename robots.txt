@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coppe-r00.github.io/Nigerian-opportunity-alert-/sitemap.xml
