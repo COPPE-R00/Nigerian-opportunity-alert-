@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 
+  <!-- Google Search Console verification -->
   <meta name="google-site-verification" content="y17kx2Hllb2GUYhWtkYD86y2DLD4JD840zXPPDQyyZ4">
 
+  <!-- Google AdSense account -->
   <meta name="google-adsense-account" content="ca-pub-4500930895916309">
 
   <meta charset="UTF-8">
@@ -17,18 +19,22 @@
 
   <meta name="robots" content="index, follow">
 
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://coppe-r00.github.io/Nigerian-opportunity-alert-/">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Nigeria Opportunity Alert">
   <meta property="og:description" content="Find jobs, scholarships, internships, fellowships and other opportunities in Nigeria.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://coppe-r00.github.io/Nigerian-opportunity-alert-/">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Nigeria Opportunity Alert">
   <meta name="twitter:description" content="Discover verified opportunities for Nigerians.">
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -109,7 +115,7 @@
 
     .categories {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 15px;
       margin-bottom: 30px;
     }
@@ -117,7 +123,7 @@
     .category {
       background: white;
       border-radius: 10px;
-      padding: 20px;
+      padding: 20px 10px;
       text-align: center;
       cursor: pointer;
       border: 1px solid #e4e7eb;
@@ -132,7 +138,7 @@
     .category strong {
       display: block;
       color: #006b3c;
-      font-size: 18px;
+      font-size: 17px;
       margin-bottom: 5px;
     }
 
@@ -294,7 +300,16 @@
       font-size: 14px;
     }
 
+    @media (max-width: 950px) {
+
+      .categories {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+    }
+
     @media (max-width: 800px) {
+
       .hero h1 {
         font-size: 32px;
       }
@@ -314,9 +329,11 @@
       .footer-content {
         grid-template-columns: 1fr;
       }
+
     }
 
     @media (max-width: 500px) {
+
       .search-box {
         flex-direction: column;
       }
@@ -332,9 +349,12 @@
       .hero h1 {
         font-size: 28px;
       }
+
     }
+
   </style>
 
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -345,14 +365,17 @@
   }
   </script>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4500930895916309"
-     crossorigin="anonymous"></script>
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4500930895916309"
+    crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
 <header>
+
   <div class="nav">
 
     <div class="logo">
@@ -392,7 +415,9 @@
     </nav>
 
   </div>
+
 </header>
+
 
 <section class="hero">
 
@@ -410,13 +435,18 @@
       id="searchInput"
       placeholder="Search jobs, scholarships, internships..."
       onkeyup="searchOpportunities()"
+      aria-label="Search opportunities"
     >
 
   </div>
 
 </section>
 
+
 <main class="container">
+
+
+  <!-- CATEGORIES -->
 
   <div class="categories">
 
@@ -440,19 +470,41 @@
       Gain experience
     </div>
 
+    <div class="category" onclick="filterCategory('fellowship')">
+      <strong>Fellowships</strong>
+      Leadership programs
+    </div>
+
+    <div class="category" onclick="filterCategory('volunteering')">
+      <strong>Volunteering</strong>
+      Volunteer opportunities
+    </div>
+
   </div>
+
+
+  <!-- TOP AD -->
 
   <div class="ad">
     Advertisement
   </div>
 
-  <h2 class="section-title">Latest Opportunities</h2>
+
+  <h2 class="section-title">
+    Latest Opportunities
+  </h2>
+
 
   <div class="opportunities" id="opportunityList">
 
+
+    <!-- AFRICAN DEVELOPMENT BANK -->
+
     <article class="card" data-category="internship">
 
-      <span class="tag">Internship</span>
+      <span class="tag">
+        Internship
+      </span>
 
       <h3>
         African Development Bank 2027 Internship Program – Session 1
@@ -482,9 +534,14 @@
 
     </article>
 
+
+    <!-- MANDELA WASHINGTON -->
+
     <article class="card" data-category="fellowship">
 
-      <span class="tag">Fellowship</span>
+      <span class="tag">
+        Fellowship
+      </span>
 
       <h3>
         Mandela Washington Fellowship 2027
@@ -514,9 +571,14 @@
 
     </article>
 
+
+    <!-- UNITED NATIONS -->
+
     <article class="card" data-category="job">
 
-      <span class="tag">Jobs</span>
+      <span class="tag">
+        Jobs
+      </span>
 
       <h3>
         United Nations Careers – Current Opportunities
@@ -546,9 +608,14 @@
 
     </article>
 
+
+    <!-- UNICEF -->
+
     <article class="card" data-category="job">
 
-      <span class="tag">Jobs / NGO</span>
+      <span class="tag">
+        Jobs / NGO
+      </span>
 
       <h3>
         UNICEF Nigeria Career Opportunities
@@ -578,9 +645,14 @@
 
     </article>
 
+
+    <!-- SCHOLARSHIP -->
+
     <article class="card" data-category="scholarship">
 
-      <span class="tag">Scholarship</span>
+      <span class="tag">
+        Scholarship
+      </span>
 
       <h3>
         Scholarship Opportunities in Nigeria
@@ -610,9 +682,14 @@
 
     </article>
 
-    <article class="card" data-category="job">
 
-      <span class="tag">Volunteering</span>
+    <!-- UN VOLUNTEERS -->
+
+    <article class="card" data-category="volunteering">
+
+      <span class="tag">
+        Volunteering
+      </span>
 
       <h3>
         UN Volunteers – Online Opportunities
@@ -642,46 +719,77 @@
 
     </article>
 
+
   </div>
+
+
+  <!-- MIDDLE AD -->
 
   <div class="ad">
     Advertisement
   </div>
 
+
+  <!-- HOW IT WORKS -->
+
   <section class="how">
 
-    <h2>How It Works</h2>
+    <h2>
+      How It Works
+    </h2>
 
     <div class="steps">
 
       <div class="step">
-        <strong>1. Discover</strong>
+
+        <strong>
+          1. Discover
+        </strong>
+
         <p>
           Browse opportunities by category or search for what you need.
         </p>
+
       </div>
 
+
       <div class="step">
-        <strong>2. Verify</strong>
+
+        <strong>
+          2. Verify
+        </strong>
+
         <p>
           Read the information carefully and confirm details on the official source.
         </p>
+
       </div>
 
+
       <div class="step">
-        <strong>3. Apply</strong>
+
+        <strong>
+          3. Apply
+        </strong>
+
         <p>
           Use the official application link whenever one is provided.
         </p>
+
       </div>
 
     </div>
 
   </section>
 
+
+  <!-- SAFETY -->
+
   <div class="safety">
 
-    <strong>Safety Notice</strong>
+    <strong>
+      Safety Notice
+    </strong>
 
     <p>
       Nigeria Opportunity Alert is an independent information platform.
@@ -693,15 +801,29 @@
 
   </div>
 
+
+  <!-- BOTTOM AD -->
+
+  <div class="ad">
+    Advertisement
+  </div>
+
+
 </main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
   <div class="footer-content">
 
+
     <div>
 
-      <h3>🇳🇬 Nigeria Opportunity Alert</h3>
+      <h3>
+        🇳🇬 Nigeria Opportunity Alert
+      </h3>
 
       <p>
         An independent platform helping Nigerians discover useful
@@ -710,19 +832,45 @@
 
     </div>
 
+
     <div>
 
-      <h3>Quick Links</h3>
+      <h3>
+        Quick Links
+      </h3>
 
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="safety.html">
+        Safety
+      </a>
+
+      <a href="privacy.html">
+        Privacy Policy
+      </a>
+
+      <a href="terms.html">
+        Terms of Use
+      </a>
 
     </div>
 
+
     <div>
 
-      <h3>Important</h3>
+      <h3>
+        Important
+      </h3>
 
       <p>
         Always verify opportunities through the official organization
@@ -731,15 +879,24 @@
 
     </div>
 
+
   </div>
 
+
   <div class="copyright">
+
     © 2026 Nigeria Opportunity Alert. All rights reserved.
+
   </div>
 
 </footer>
 
+
+<!-- Existing opportunities JavaScript -->
 <script src="opportunities.js"></script>
+
+
+<!-- Search and category filtering -->
 
 <script>
 
@@ -748,7 +905,8 @@
     const input = document
       .getElementById("searchInput")
       .value
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
 
     const cards = document.querySelectorAll(".card");
 
@@ -769,6 +927,7 @@
     });
 
   }
+
 
   function filterCategory(category) {
 
@@ -791,11 +950,13 @@
 
     });
 
+
     document.getElementById("searchInput").value = "";
 
   }
 
 </script>
+
 
 </body>
 </html>
